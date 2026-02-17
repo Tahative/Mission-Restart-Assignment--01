@@ -2,7 +2,7 @@
 
 #### 1) What is the difference between `null` and `undefined`?
 
-Ans: মানে ইচ্ছে করে খালি রাখা হয়েছে আর মানে ভ্যালু তৈরি হয়েছে কিন্তু মান দেওয়া হয়নি।
+Ans: "null" - মানে ইচ্ছে করে খালি রাখা হয়েছে আর "undefined" - মানে ভ্যালু তৈরি হয়েছে কিন্তু মান দেওয়া হয়নি।
 
 #### 2) What is the use of the `map()` function in JavaScript? How is it different from `forEach()`?
 
@@ -25,8 +25,8 @@ async/await ব্যবহার করলে কোড সহজ ও পড়ত
 
 #### 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
 Ans: 
-Global Scope → পুরো প্রোগ্রামে ব্যবহার করা যায়
-Function Scope → শুধু ওই ফাংশনের ভিতরে ব্যবহার করা যায়
-Block Scope → {} এর ভিতরে সীমাবদ্ধ (let, const দিয়ে তৈরি ভ্যারিয়েবল)
+Global Scope - পুরো প্রোগ্রামে ব্যবহার করা যায়
+Function Scope - শুধু ওই ফাংশনের ভিতরে ব্যবহার করা যায়
+Block Scope - {} এর ভিতরে সীমাবদ্ধ (let, const দিয়ে তৈরি ভ্যারিয়েবল)
 
 
