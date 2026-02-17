@@ -10,9 +10,9 @@
     <link href="./Assets/Favicon.png" rel="icon" type="image/png" >
 
     <!-- font inter -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 
     <!-- font awesome link -->
@@ -28,7 +28,7 @@
 
 </head>
 <body>
-   <div class="container mx-auto px-0">
+   
          <!-- nav start -->
             <Header>
               <div class="flex bg-base-100   border-b border-gray-200  px-32 py-2 ">
@@ -81,21 +81,26 @@
           <!-- nav end -->
 
   <!-- hero section start -->
-  <div
-  class="hero min-h-screen  bg-cover bg-center mb-32"
-  style="background-image: url('./Assets/banner-image.png')">
-  <div class="hero-overlay   bg-black/50  ">
-  </div>
-  <div class="hero-content justify-start items-center w-full">
-    <div class="max-w-xl  text-center md:text-left ">
-      <h1 class="mb-5 text-5xl font-bold text-base-100">Best Collection For You</h1>
-      <p class="mb-5  text-base-100 text-l font-light">
-        Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
-      </p>
-      <button class="btn btn-primary border-10">Shop Now</button>
-    </div>
-  </div>
-</div>
+          <section class="relative h-[120vh]">
+             <div class="sticky top-0 h-screen overflow-hidden">
+
+              <div class="hero h-[1000px]  bg-cover bg-center mb-0 "
+                    style="background-image: url('./Assets/banner-image.png')">
+                    <div class="hero-overlay  bg-gradient-to-r from-black/60 via-black/5 to-transparent">
+                    </div>
+                    <div class="hero-content justify-start items-center w-11/12 max-w-[1440px] h-full mx-auto p-4  ">
+                      <div class="max-w-xl  text-center md:text-left ">
+                        <h1 class="mb-5 text-5xl font-bold text-base-100">Best Collection For You</h1>
+                        <p class="mb-5  text-base-100 text-l font-light">
+                          Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
+                        </p>
+                        <button class="btn btn-primary border-10">Shop Now</button>
+                      </div>
+                    </div>
+                  </div>
+             </div>
+ 
+          </section>
 
   <!-- hero section end -->
 
@@ -106,7 +111,7 @@
   <!-- why choose us start -->
 
       
-    <section class="w-full bg-base-200 py-24 mb-32">
+    <section class="w-full bg-base-200 py-24  mb-0">
           <div class="mx-auto max-w-6xl px-4 ">
             <!-- Heading -->
             <div class="text-center">
@@ -119,7 +124,7 @@
             
 
         <!-- Cards -->
-        <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 ">
+        <div class="mt-10 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4 ">
 
           <!-- Card 1-->
           <div class="relative -pt-16 z-1">
@@ -232,14 +237,33 @@
 
 
   <!-- Trendin Now start -->
-  <!-- Trendin Now end -->
+
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      
+      <h2 class="text-2xl font-bold mb-6">Trending Now</h2>
+
+      <!-- Products Grid -->
+
+      <div id="productsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Modal -->
+
+  <!-- <-- Trendin Now end --> 
+
 
 
   <!-- footer section start -->
 
    
-        <section>
-              <footer class="bg-slate-900 text-slate-200">
+        <section class="">
+              <footer class="bg-slate-900 text-slate-200 py-16">
                 <div class="mx-auto max-w-6xl px-6 pt-5">
                   <!-- TOP GRID -->
                   <div class="grid gap-10 md:grid-cols-4">
@@ -255,9 +279,9 @@
                     </aside>
 
                     <!-- Quick Links -->
-                    <nav class="space-y-2">
-                      <h6 class="text-sm font-semibold tracking-wide text-slate-300">QUICK LINKS</h6>
-                      <div class="flex flex-col gap-2">
+                    <nav class="space-y-6">
+                      <h6 class="text-md font-bold tracking-wide text-slate-400">QUICK LINKS</h6>
+                      <div class="flex flex-col gap-2 text-sm">
                         <a class="link link-hover text-slate-300" href="#">Home</a>
                         <a class="link link-hover text-slate-300" href="#">Products</a>
                         <a class="link link-hover text-slate-300" href="#">About</a>
@@ -266,9 +290,9 @@
                     </nav>
 
                     <!-- Support -->
-                    <nav class="space-y-2">
-                      <h6 class="text-sm font-semibold tracking-wide text-slate-300">SUPPORT</h6>
-                      <div class="flex flex-col gap-2">
+                    <nav class="space-y-6">
+                      <h6 class="text-md font-bold tracking-wide text-slate-400">SUPPORT</h6>
+                      <div class="flex flex-col gap-2 text-sm">
                         <a class="link link-hover text-slate-300" href="#">FAQ</a>
                         <a class="link link-hover text-slate-300" href="#">Shipping</a>
                         <a class="link link-hover text-slate-300" href="#">Returns</a>
@@ -277,17 +301,17 @@
                     </nav>
 
                     <!-- Newsletter -->
-                    <form class="w-full max-w-sm space-y-3">
-                      <h6 class="text-sm font-semibold tracking-wide text-slate-300">SUBSCRIBE TO OUR NEWSLETTER</h6>
-                      <p class="text-sm text-slate-400">
+                    <form class="w-full max-w-sm space-y-6">
+                      <h6 class="text-lg  w-2xl font-extrabold tracking-wide text-slate-400">SUBSCRIBE TO OUR NEWSLETTER</h6>
+                      <p class="text-sm w-xl max-w-80">
                         The latest news, articles, and resources, sent to your inbox weekly.
                       </p>
 
-                      <div class="flex gap-2">
+                      <div class="flex gap-2 w-full">
                         <input
                           type="email"
                           placeholder="Enter your email"
-                          class="input input-bordered w-full bg-slate-900 text-slate-100 placeholder:text-slate-500 border-slate-700 focus:border-indigo-400"
+                          class="input input-bordered w-2xl bg-base-200 text-slate-100 placeholder:text-slate-500 border-slate-700 focus:border-indigo-400"
                         />
                         <button
                           type="submit"
@@ -304,7 +328,7 @@
 
                   <!-- BOTTOM BAR -->
                   <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <p class="text-xs text-slate-500">© 2025 SwiftCart, Inc. All rights reserved.</p>
+                    <p class="text-[14px] text-slate-400"> © 2026 SwiftCart, Inc. All rights reserved.</p>
 
                     <div class="flex items-center gap-5 text-slate-500">
                       <!-- Facebook -->
@@ -351,7 +375,82 @@
       
   
   <!-- footer section end -->
-   </div>
-    
+
+  <!--  Product Details Modal -->
+      <section>
+        <div
+        id="productModal"
+        class="fixed inset-0 hidden bg-black/50 z-50 flex items-center justify-center p-4"
+      >
+        <!-- Modal Box -->
+        <div
+          class="bg-white w-full max-w-xl rounded-2xl shadow-xl overflow-hidden relative"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeModal"
+            class="absolute top-3 right-3 text-2xl text-slate-600 hover:text-black"
+          >
+            &times;
+          </button>
+
+          <!-- Image Area -->
+          <div class="bg-slate-100 p-8 flex justify-center">
+            <img
+              id="modalImg"
+              src=""
+              alt="Product Image"
+              class="h-56 object-contain"
+            />
+          </div>
+
+          <!-- Modal Content -->
+          <div class="p-6">
+            <!-- Category + Rating -->
+            <div class="flex justify-between items-center mb-3">
+              <span
+                id="modalCategory"
+                class="text-xs px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 font-medium"
+              >
+                Category
+              </span>
+
+              <div class="text-sm flex items-center gap-1 text-slate-600">
+                <span class="text-yellow-500">★</span>
+                <span id="modalRate">0</span>
+                <span class="text-slate-400"
+                  >(<span id="modalCount">0</span>)</span
+                >
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h2 id="modalTitle" class="text-xl font-bold text-slate-900">
+              Product Title
+            </h2>
+
+            <!-- Description -->
+            <p
+              id="modalDesc"
+              class="mt-3 text-sm leading-6 text-slate-600"
+            >
+              Product description goes here...
+            </p>
+
+            <!-- Price -->
+            <p id="modalPrice" class="mt-5 text-lg font-bold text-slate-900">
+              $0
+            </p>
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+
+
+
+   
+    <script src="/index.js"></script>
 </body>
 </html>
