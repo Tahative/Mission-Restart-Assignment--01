@@ -2,7 +2,7 @@
 
 #### 1) What is the difference between `null` and `undefined`?
 
-Ans: মানে ইচ্ছে করে খালি রাখা হয়েছে আর মানে ভ্যালু তৈরি হয়েছে কিন্তু মান দেওয়া হয়নি।
+Ans: "null" - মানে ইচ্ছে করে খালি রাখা হয়েছে আর "undefined" - মানে ভ্যালু তৈরি হয়েছে কিন্তু মান দেওয়া হয়নি।
 
 #### 2) What is the use of the `map()` function in JavaScript? How is it different from `forEach()`?
 
