@@ -31,7 +31,7 @@
    
          <!-- nav start -->
             <Header>
-              <div class="flex bg-base-100   border-b border-gray-200  px-32 py-2 ">
+              <div class="flex bg-base-100   border-b border-gray-200  px-32 py-2   px-4 sm:px-6 lg:px-32 py-2">
                 
                   <!--nav  left   -->
                 <div class="navbar-start ">
@@ -41,8 +41,8 @@
                 <!-- nav middle -->
                 <div class="navbar-center hidden lg:flex items-center gap-1">
                         <ul class="menu menu-horizontal text-lg font-semibold px-1">
-                            <li><a>Home </a></li>
-                            <li><a>Products</a></li>
+                            <li><a href="">Home </a></li>
+                            <li><a href="/products.html">Products</a></li>
                             <li><a>About</a></li>
                             <li><a>Contact</a></li>
                         </ul>
@@ -52,19 +52,19 @@
                   
 
                   <div class="flex-none">
-                    <div class="dropdown dropdown-end">
+                    <div class="dropdown dropdown-end sticky top-0 z-50">
                       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                         <div class="indicator">
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
-                          <span class="badge badge-sm indicator-item">8</span>
+                          <span class="badge badge-sm indicator-item">0</span>
                         </div>
                       </div>
                       <div
                         tabindex="0"
                         class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
                         <div class="card-body">
-                          <span class="text-lg font-bold">8 Items</span>
-                          <span class="text-info">Subtotal: $999</span>
+                          <span class="text-lg font-bold">0 Items</span>
+                          <span class="text-info">Subtotal: $0</span>
                           <div class="card-actions">
                             <button class="btn btn-primary btn-block">View cart</button>
                           </div>
@@ -77,30 +77,48 @@
               
               </div>
 
-            </Header>
-          <!-- nav end -->
+              
+              
 
+         </div> 
+          
+          <!-- <a class="text-2xl font-bold text-primary ml-1" href="">SwiftCraft</a> -->
+        </div>
+      </Header> 
+          <!-- <-- nav end -->  
   <!-- hero section start -->
-          <section class="relative h-[120vh]">
-             <div class="sticky top-0 h-screen overflow-hidden">
+         <section class="relative">
+          <!-- remove fixed 120vh + sticky on mobile -->
+          <div class="overflow-hidden">
 
-              <div class="hero h-[1000px]  bg-cover bg-center mb-0 "
-                    style="background-image: url('./Assets/banner-image.png')">
-                    <div class="hero-overlay  bg-gradient-to-r from-black/60 via-black/5 to-transparent">
-                    </div>
-                    <div class="hero-content justify-start items-center w-11/12 max-w-[1440px] h-full mx-auto p-4  ">
-                      <div class="max-w-xl  text-center md:text-left ">
-                        <h1 class="mb-5 text-5xl font-bold text-base-100">Best Collection For You</h1>
-                        <p class="mb-5  text-base-100 text-l font-light">
-                          Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
-                        </p>
-                        <button class="btn btn-primary border-10">Shop Now</button>
-                      </div>
-                    </div>
+            <div
+              class="hero bg-cover bg-center mb-0 min-h-[70vh] sm:min-h-[85vh] md:h-[1000px]"
+              style="background-image: url('./Assets/banner-image.png')"
+            >
+              <div class="hero-overlay bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
+
+              <div class="hero-content justify-start items-center w-full h-full">
+                <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:p-4">
+                  <div class="max-w-xl text-center md:text-left">
+                    <h1 class="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-base-100 leading-tight">
+                      Best Collection For You
+                    </h1>
+
+                    <p class="mb-6 text-sm sm:text-base md:text-lg text-base-100/90 font-light">
+                      Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
+                    </p>
+
+                    <button class="btn btn-primary w-full sm:w-auto">
+                      Shop Now
+                    </button>
                   </div>
-             </div>
- 
-          </section>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
 
   <!-- hero section end -->
 
