@@ -1,474 +1,402 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- title and logo -->
-    <title>SwiftCraft</title>
-    <link href="./Assets/Favicon.png" rel="icon" type="image/png" >
+  <!-- title and logo -->
+  <title>SwiftCraft</title>
+  <link href="./Assets/Favicon.png" rel="icon" type="image/png" >
 
-    <!-- font inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- font inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- daisyUI and tailwind link -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- daisyUI and tailwind link -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- css -->
-     <link rel="stylesheet" href="./styles.css">
-
-
+  <!-- css -->
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-   
-         <!-- nav start -->
-            <Header>
-              <div class="flex bg-base-100   border-b border-gray-200  px-32 py-2   px-4 sm:px-6 lg:px-32 py-2">
-                
-                  <!--nav  left   -->
-                <div class="navbar-start ">
-                    <a class ="text-2xl font-bold text-primary" href=" ">SwiftCraft</a>
-                </div>
-                    
-                <!-- nav middle -->
-                <div class="navbar-center hidden lg:flex items-center gap-1">
-                        <ul class="menu menu-horizontal text-lg font-semibold px-1">
-                            <li><a href="">Home </a></li>
-                            <li><a href="./products.html">Products</a></li>
-                            <li><a>About</a></li>
-                            <li><a>Contact</a></li>
-                        </ul>
-                </div>
-                <!-- nav right -->
-                <div class="navbar-end">
-                  
 
-                  <div class="flex-none">
-                    <div class="dropdown dropdown-end sticky top-0 z-50">
-                      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                        <div class="indicator">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
-                          <span class="badge badge-sm indicator-item">0</span>
-                        </div>
-                      </div>
-                      <div
-                        tabindex="0"
-                        class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
-                        <div class="card-body">
-                          <span class="text-lg font-bold">0 Items</span>
-                          <span class="text-info">Subtotal: $0</span>
-                          <div class="card-actions">
-                            <button class="btn btn-primary btn-block">View cart</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
-                    </div>
-                </div>
-              
+<body>
+
+  <!-- nav start -->
+  <Header>
+    <div class="navbar bg-base-100 border-b border-gray-200 px-4 lg:px-32">
+
+      <div class="navbar-start">
+
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden text-xl">☰</label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52 z-[99]">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Desktop logo -->
+        <a class="hidden lg:block text-xl font-bold text-primary" href="./index.html">SwiftCraft</a>
+      </div>
+
+      <!-- Center logo (mobile) -->
+      <div class="navbar-center lg:hidden">
+        <a class="text-xl font-bold text-primary" href="./index.html">SwiftCraft</a>
+      </div>
+
+      <!-- Desktop menu -->
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal text-lg font-semibold gap-2">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- End (Cart) -->
+      <div class="navbar-end">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <!-- cart icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293
+                    c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4
+                    2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+
+              <!-- count -->
+              <span id="cartCount" class="badge badge-sm indicator-item">0</span>
+            </div>
+          </label>
+
+          <!-- Dropdown content -->
+          <div tabindex="0" class="card card-compact dropdown-content bg-base-100 mt-3 w-80 shadow z-[99]">
+            <div class="card-body gap-3">
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold">
+                  Cart (<span id="cartCountText">0</span>)
+                </span>
+                <button id="clearCartBtn" class="btn btn-ghost btn-sm">Clear</button>
               </div>
 
-              
-              
+              <!-- cart items -->
+              <div id="cartItems" class="max-h-64 overflow-auto space-y-2">
+                <p class="text-sm opacity-70">Your cart is empty.</p>
+              </div>
 
-         </div> 
-          
-          <!-- <a class="text-2xl font-bold text-primary ml-1" href="">SwiftCraft</a> -->
-        </div>
-      </Header> 
-          <!-- <-- nav end -->  
-  <!-- hero section start -->
-         <section class="relative">
-          <!-- remove fixed 120vh + sticky on mobile -->
-          <div class="overflow-hidden">
+              <div class="divider my-1"></div>
 
-            <div
-              class="hero bg-cover bg-center mb-0 min-h-[70vh] sm:min-h-[85vh] md:h-[1000px]"
-              style="background-image: url('./Assets/banner-image.png')"
-            >
-              <div class="hero-overlay bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold">Total</span>
+                <span class="font-bold">$<span id="cartTotal">0.00</span></span>
+              </div>
 
-              <div class="hero-content justify-start items-center w-full h-full">
-                <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:p-4">
-                  <div class="max-w-xl text-center md:text-left">
-                    <h1 class="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-base-100 leading-tight">
-                      Best Collection For You
-                    </h1>
-
-                    <p class="mb-6 text-sm sm:text-base md:text-lg text-base-100/90 font-light">
-                      Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
-                    </p>
-
-                    <button class="btn btn-primary w-full sm:w-auto">
-                      Shop Now
-                    </button>
-                  </div>
-                </div>
+              <div class="card-actions">
+                <a href="./products.html" class="btn btn-primary btn-block">View cart</a>
               </div>
 
             </div>
-
           </div>
-        </section>
+        </div>
+      </div>
 
+    </div>
+  </Header>
+  <!-- nav end -->
+
+  <!-- hero section start -->
+  <section class="relative">
+    <div class="overflow-hidden">
+
+      <div
+        class="hero bg-cover bg-center mb-0 min-h-[70vh] sm:min-h-[85vh] md:h-[1000px]"
+        style="background-image: url('./Assets/banner-image.png')"
+      >
+        <div class="hero-overlay bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
+
+        <div class="hero-content justify-start items-center w-full h-full">
+          <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:p-4">
+            <div class="max-w-xl text-center md:text-left">
+              <h1 class="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold text-base-100 leading-tight">
+                Best Collection For You
+              </h1>
+
+              <p class="mb-6 text-sm sm:text-base md:text-lg text-base-100/90 font-light">
+                Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
+              </p>
+
+              <button class="btn btn-primary w-full sm:w-auto">
+                <a href="./products.html">Shop Now</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
   <!-- hero section end -->
 
-
-
-
-
   <!-- why choose us start -->
-
-      
-    <section class="w-full bg-base-200 py-24  mb-0">
-          <div class="mx-auto max-w-6xl px-4 ">
-            <!-- Heading -->
-            <div class="text-center">
-              <h2 class="text-4xl font-extrabold">Why Choose Us</h2>
-              <p class="mt-2 text-base text-2xl/60 pt-2 pb-12">
-                We provide the best shopping experience with top-notch services.
-              </p>
-            </div>
-
-            
-
-        <!-- Cards -->
-        <div class="mt-10 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4 ">
-
-          <!-- Card 1-->
-          <div class="relative -pt-16 z-1">
-            
-            <!-- Floating Icon -->
-            <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
-              <i class="fa-regular fa-truck fa-2xl text-indigo-600"></i>
-            </div>
-
-            <!-- Card Body -->
-            <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center
-                        hover:shadow-md transition pt-6 px-6 pb-[15px] min-h-[200px]">
-              
-              <h3 class="text-lg font-semibold mt-[34px] mb-[6px]">
-                Fast Delivery
-              </h3>
-
-              <p class="text-sm text-gray-500 mt-2  leading-relaxed">
-                Get your orders delivered to your doorstep quickly and efficiently.
-              </p>
-
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-            <div class="relative -pt-16 z-1">
-            
-            <!-- Headphones Icon -->
-            <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
-              <i class="fa-regular fa-headphones fa-2xl" style="color: rgba(63, 71, 224, 1.00);"></i>
-            </div>
-
-            <!-- Card Body -->
-            <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center
-                        hover:shadow-md transition p-6 min-h-[200px]">
-              
-              <h3 class="text-lg font-semibold mt-8 mb-[2px]">
-                24/7 Support
-              </h3>
-
-              <p class="text-sm text-gray-500 mt-2 mb-5 leading-relaxed">
-                Our support team is available around the clock to assist you.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- Card 3 -->
-            <div class="relative -pt-16 z-1">
-            
-            <!-- Shield Icon -->
-            <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
-              <svg
-                      class="w-10 h-10 text-primary"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
-                      <path d="M9 12l2 2 4-4" />
-                    </svg>
-            </div>
-
-            <!-- Card Body -->
-            <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center
-                        hover:shadow-md transition p-6 min-h-[200px]">
-              
-              <h3 class="text-lg font-semibold mt-7 mb-[2px]">
-                Secure Payment
-              </h3>
-
-              <p class="text-sm text-gray-500 mt-2 mb-0 leading-relaxed">
-                 Experience safe and secure transactions with our encrypted payment systems.
-              </p>
-
-            </div>
-          </div>
-      
-
-          <!-- Card 4 -->
-             
-          <div class="relative -pt-16 z-1">
-            
-            <!-- Repeat Icon -->
-            <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
-               <i class="fa-solid fa-arrows-rotate fa-2xl" style="color: rgba(63, 71, 224, 1.00);"></i>
-            </div>
-
-            <!-- Card Body -->
-            <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center
-                        hover:shadow-md transition p-6 min-h-[200px]">
-              
-              <h3 class="text-lg font-semibold mt-8 mb-[6px]">
-                Easy Returns
-              </h3>
-
-              <p class="text-sm text-gray-500 mt-2 mb-4 leading-relaxed">
-                   Not satisfied? Return your products easily within 30 days.
-
-            </div>
-          </div>
-
-                 
-    </section>
-  <!-- why choose us end -->
-
-
-  <!-- Trendin Now start -->
-
-    <section class="max-w-6xl mx-auto px-6 py-16">
-      
-      <h2 class="text-2xl font-bold mb-6">Trending Now</h2>
-
-      <!-- Products Grid -->
-
-      <div id="productsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-
+  <section class="w-full bg-base-200 py-24  mb-0">
+    <div class="mx-auto max-w-6xl px-4 ">
+      <!-- Heading -->
+      <div class="text-center">
+        <h2 class="text-4xl font-extrabold">Why Choose Us</h2>
+        <p class="mt-2 text-base text-2xl/60 pt-2 pb-12">
+          We provide the best shopping experience with top-notch services.
+        </p>
       </div>
 
-    </section>
+      <!-- Cards -->
+      <div class="mt-10 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4 ">
 
-
-
-    <!-- Modal -->
-
-  <!-- <-- Trendin Now end --> 
-
-
-
-  <!-- footer section start -->
-
-   
-        <section class="">
-              <footer class="bg-slate-900 text-slate-200 py-16">
-                <div class="mx-auto max-w-6xl px-6 pt-5">
-                  <!-- TOP GRID -->
-                  <div class="grid gap-10 md:grid-cols-4">
-                    <!-- Brand -->
-                    <aside class="max-w-sm">
-                      <a class="text-xl font-semibold tracking-tight text-indigo-400" href="#">
-                        SwiftCart
-                      </a>
-                      <p class="mt-3 text-sm leading-6 text-slate-400">
-                        Your one-stop shop for all your fashion and lifestyle needs. Quality products,
-                        fast delivery, and excellent support.
-                      </p>
-                    </aside>
-
-                    <!-- Quick Links -->
-                    <nav class="space-y-6">
-                      <h6 class="text-md font-bold tracking-wide text-slate-400">QUICK LINKS</h6>
-                      <div class="flex flex-col gap-2 text-sm">
-                        <a class="link link-hover text-slate-300" href="#">Home</a>
-                        <a class="link link-hover text-slate-300" href="#">Products</a>
-                        <a class="link link-hover text-slate-300" href="#">About</a>
-                        <a class="link link-hover text-slate-300" href="#">Contact</a>
-                      </div>
-                    </nav>
-
-                    <!-- Support -->
-                    <nav class="space-y-6">
-                      <h6 class="text-md font-bold tracking-wide text-slate-400">SUPPORT</h6>
-                      <div class="flex flex-col gap-2 text-sm">
-                        <a class="link link-hover text-slate-300" href="#">FAQ</a>
-                        <a class="link link-hover text-slate-300" href="#">Shipping</a>
-                        <a class="link link-hover text-slate-300" href="#">Returns</a>
-                        <a class="link link-hover text-slate-300" href="#">Privacy Policy</a>
-                      </div>
-                    </nav>
-
-                    <!-- Newsletter -->
-                    <form class="w-full max-w-sm space-y-6">
-                      <h6 class="text-lg  w-2xl font-extrabold tracking-wide text-slate-400">SUBSCRIBE TO OUR NEWSLETTER</h6>
-                      <p class="text-sm w-xl max-w-80">
-                        The latest news, articles, and resources, sent to your inbox weekly.
-                      </p>
-
-                      <div class="flex gap-2 w-full">
-                        <input
-                          type="email"
-                          placeholder="Enter your email"
-                          class="input input-bordered w-2xl bg-base-200 text-slate-100 placeholder:text-slate-500 border-slate-700 focus:border-indigo-400"
-                        />
-                        <button
-                          type="submit"
-                          class="btn btn-primary bg-indigo-500 border-indigo-500 hover:bg-indigo-400 hover:border-indigo-400"
-                        >
-                          Subscribe
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-
-                  <!-- Divider -->
-                  <div class="mt-10 border-t border-slate-800"></div>
-
-                  <!-- BOTTOM BAR -->
-                  <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <p class="text-[14px] text-slate-400"> © 2026 SwiftCart, Inc. All rights reserved.</p>
-
-                    <div class="flex items-center gap-5 text-slate-500">
-                      <!-- Facebook -->
-                      <a class="hover:text-slate-200 transition" href="#" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M22 12a10 10 0 1 0-11.563 9.875v-6.987H7.898V12h2.539V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562V12h2.773l-.443 2.888h-2.33v6.987A10.002 10.002 0 0 0 22 12z"/>
-                        </svg>
-                      </a>
-
-                      <!-- X -->
-                      <a class="hover:text-slate-200 transition" href="#" aria-label="X">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.1-6.7L5.6 22H2.5l7.3-8.4L2 2h6.7l4.6 6.1L18.9 2zm-1.2 18h1.7L7.6 3.9H5.8L17.7 20z"/>
-                        </svg>
-                      </a>
-
-                      <!-- Instagram -->
-                      <a class="hover:text-slate-200 transition" href="#" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.2-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/>
-                        </svg>
-                      </a>
-
-                      <!-- LinkedIn -->
-                      <a class="hover:text-slate-200 transition" href="#" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9z"/>
-                        </svg>
-                      </a>
-
-                      <!-- Email -->
-                      <a class="hover:text-slate-200 transition" href="mailto:hello@swiftcart.com" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </footer>
-        </section>
-
-
-      
-  
-  <!-- footer section end -->
-
-  <!--  Product Details Modal -->
-      <section>
-        <div
-        id="productModal"
-        class="fixed inset-0 hidden bg-black/50 z-50 flex items-center justify-center p-4"
-      >
-        <!-- Modal Box -->
-        <div
-          class="bg-white w-full max-w-xl rounded-2xl shadow-xl overflow-hidden relative"
-        >
-          <!-- Close Button -->
-          <button
-            id="closeModal"
-            class="absolute top-3 right-3 text-2xl text-slate-600 hover:text-black"
-          >
-            &times;
-          </button>
-
-          <!-- Image Area -->
-          <div class="bg-slate-100 p-8 flex justify-center">
-            <img
-              id="modalImg"
-              src=""
-              alt="Product Image"
-              class="h-56 object-contain"
-            />
+        <!-- Card 1-->
+        <div class="relative -pt-16 z-1">
+          <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
+            <i class="fa-regular fa-truck fa-2xl text-indigo-600"></i>
           </div>
-
-          <!-- Modal Content -->
-          <div class="p-6">
-            <!-- Category + Rating -->
-            <div class="flex justify-between items-center mb-3">
-              <span
-                id="modalCategory"
-                class="text-xs px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 font-medium"
-              >
-                Category
-              </span>
-
-              <div class="text-sm flex items-center gap-1 text-slate-600">
-                <span class="text-yellow-500">★</span>
-                <span id="modalRate">0</span>
-                <span class="text-slate-400"
-                  >(<span id="modalCount">0</span>)</span
-                >
-              </div>
-            </div>
-
-            <!-- Title -->
-            <h2 id="modalTitle" class="text-xl font-bold text-slate-900">
-              Product Title
-            </h2>
-
-            <!-- Description -->
-            <p
-              id="modalDesc"
-              class="mt-3 text-sm leading-6 text-slate-600"
-            >
-              Product description goes here...
-            </p>
-
-            <!-- Price -->
-            <p id="modalPrice" class="mt-5 text-lg font-bold text-slate-900">
-              $0
+          <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center hover:shadow-md transition pt-6 px-6 pb-[15px] min-h-[200px]">
+            <h3 class="text-lg font-semibold mt-[34px] mb-[6px]">Fast Delivery</h3>
+            <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+              Get your orders delivered to your doorstep quickly and efficiently.
             </p>
           </div>
         </div>
+
+        <!-- Card 2 -->
+        <div class="relative -pt-16 z-1">
+          <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
+            <i class="fa-regular fa-headphones fa-2xl" style="color: rgba(63, 71, 224, 1.00);"></i>
+          </div>
+          <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center hover:shadow-md transition p-6 min-h-[200px]">
+            <h3 class="text-lg font-semibold mt-8 mb-[2px]">24/7 Support</h3>
+            <p class="text-sm text-gray-500 mt-2 mb-5 leading-relaxed">
+              Our support team is available around the clock to assist you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative -pt-16 z-1">
+          <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
+            <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center hover:shadow-md transition p-6 min-h-[200px]">
+            <h3 class="text-lg font-semibold mt-7 mb-[2px]">Secure Payment</h3>
+            <p class="text-sm text-gray-500 mt-2 mb-0 leading-relaxed">
+              Experience safe and secure transactions with our encrypted payment systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative -pt-16 z-1">
+          <div class="absolute -top-8 left-6 w-14 h-14 rounded-2xl bg-[#eef2ff]  flex items-center justify-center shadow-md border-4 border-[#ffffffff] z-1">
+            <i class="fa-solid fa-arrows-rotate fa-2xl" style="color: rgba(63, 71, 224, 1.00);"></i>
+          </div>
+          <div class="card bg-base-100 border border-[#e5e7eb] rounded-2xl shadow-sm justify-center hover:shadow-md transition p-6 min-h-[200px]">
+            <h3 class="text-lg font-semibold mt-8 mb-[6px]">Easy Returns</h3>
+            <p class="text-sm text-gray-500 mt-2 mb-4 leading-relaxed">
+              Not satisfied? Return your products easily within 30 days.
+            </p>
+          </div>
+        </div>
+
       </div>
-      </section>
+    </div>
+  </section>
+  <!-- why choose us end -->
 
+  <!-- Trending Now start -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-6">Trending Now</h2>
 
+    <!-- Products Grid -->
+    
+    <div id="trendingGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+  <!-- Trending Now end -->
 
+  <!-- footer section start -->
+  <section class="">
+    <footer class="bg-slate-900 text-slate-200 py-16">
+      <div class="mx-auto max-w-6xl px-6 pt-5">
+        <!-- TOP GRID -->
+        <div class="grid gap-10 md:grid-cols-4">
+          <!-- Brand -->
+          <aside class="max-w-sm">
+            <a class="text-xl font-semibold tracking-tight text-indigo-400" href="#">
+              SwiftCart
+            </a>
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Your one-stop shop for all your fashion and lifestyle needs. Quality products,
+              fast delivery, and excellent support.
+            </p>
+          </aside>
 
+          <!-- Quick Links -->
+          <nav class="space-y-6">
+            <h6 class="text-md font-bold tracking-wide text-slate-400">QUICK LINKS</h6>
+            <div class="flex flex-col gap-2 text-sm">
+              <a class="link link-hover text-slate-300" href="#">Home</a>
+              <a class="link link-hover text-slate-300" href="#">Products</a>
+              <a class="link link-hover text-slate-300" href="#">About</a>
+              <a class="link link-hover text-slate-300" href="#">Contact</a>
+            </div>
+          </nav>
 
-   
-    <script src="./index.js"></script>
+          <!-- Support -->
+          <nav class="space-y-6">
+            <h6 class="text-md font-bold tracking-wide text-slate-400">SUPPORT</h6>
+            <div class="flex flex-col gap-2 text-sm">
+              <a class="link link-hover text-slate-300" href="#">FAQ</a>
+              <a class="link link-hover text-slate-300" href="#">Shipping</a>
+              <a class="link link-hover text-slate-300" href="#">Returns</a>
+              <a class="link link-hover text-slate-300" href="#">Privacy Policy</a>
+            </div>
+          </nav>
+
+          <!-- Newsletter -->
+          <form class="w-full max-w-sm space-y-6">
+            <h6 class="text-lg  w-2xl font-extrabold tracking-wide text-slate-400">SUBSCRIBE TO OUR NEWSLETTER</h6>
+            <p class="text-sm w-xl max-w-80">
+              The latest news, articles, and resources, sent to your inbox weekly.
+            </p>
+
+            <div class="flex gap-2 w-full">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="input input-bordered w-2xl bg-base-200 text-slate-100 placeholder:text-slate-500 border-slate-700 focus:border-indigo-400"
+              />
+              <button
+                type="submit"
+                class="btn btn-primary bg-indigo-500 border-indigo-500 hover:bg-indigo-400 hover:border-indigo-400"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-10 border-t border-slate-800"></div>
+
+        
+        <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-[14px] text-slate-400"> © 2026 SwiftCart, Inc. All rights reserved.</p>
+
+          <div class="flex items-center gap-5 text-slate-500">
+            <!-- Facebook -->
+            <a class="hover:text-slate-200 transition" href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.563 9.875v-6.987H7.898V12h2.539V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562V12h2.773l-.443 2.888h-2.33v6.987A10.002 10.002 0 0 0 22 12z"/>
+              </svg>
+            </a>
+
+            <!-- X -->
+            <a class="hover:text-slate-200 transition" href="#" aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.1-6.7L5.6 22H2.5l7.3-8.4L2 2h6.7l4.6 6.1L18.9 2zm-1.2 18h1.7L7.6 3.9H5.8L17.7 20z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a class="hover:text-slate-200 transition" href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.2-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a class="hover:text-slate-200 transition" href="#" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9z"/>
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a class="hover:text-slate-200 transition" href="mailto:hello@swiftcart.com" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!-- footer section end -->
+
+  <!-- Product Details Modal -->
+  <!-- NOTE: keep only ONE modal with these IDs to avoid JS conflicts -->
+  <div
+    id="productModal"
+    class="fixed inset-0 hidden bg-black/50 z-50 items-center justify-center p-4"
+  >
+    <div class="bg-white w-full max-w-xl rounded-2xl shadow-xl overflow-hidden relative">
+      <button
+        id="closeModal"
+        type="button"
+        class="absolute top-3 right-3 text-2xl text-slate-600 hover:text-black"
+      >
+        &times;
+      </button>
+
+      <div class="bg-slate-50 p-8 flex justify-center">
+        <img id="modalImg" src="" alt="Product Image" class="h-56 object-contain" />
+      </div>
+
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-3">
+          <span
+            id="modalCategory"
+            class="text-xs px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 font-medium"
+          >
+            Category
+          </span>
+
+          <div class="text-sm flex items-center gap-1 text-slate-600">
+            <span class="text-yellow-500">★</span>
+            <span id="modalRate">0</span>
+            <span class="text-slate-400">(<span id="modalCount">0</span>)</span>
+          </div>
+        </div>
+
+        <h2 id="modalTitle" class="text-xl font-bold text-slate-900">
+          Product Title
+        </h2>
+
+        <p id="modalDesc" class="mt-3 text-sm leading-6 text-slate-600">
+          Product description goes here...
+        </p>
+
+        <p id="modalPrice" class="mt-5 text-lg font-bold text-slate-900">
+          $0
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="./index.js"></script>
 </body>
 </html>

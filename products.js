@@ -1,6 +1,137 @@
 let ALL_PRODUCTS = [];
 let ACTIVE_CATEGORY = "all";
 
+const USE_LOCAL_STORAGE = true;
+const CART_KEY = "swiftcraft_cart_v1";
+
+// Cart items shape: { id, title, price, image, qty }
+let CART = [];
+
+const money = (n) => Number(n).toFixed(2);
+
+const loadCart = () => {
+  if (!USE_LOCAL_STORAGE) return;
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    CART = raw ? JSON.parse(raw) : [];
+  } catch {
+    CART = [];
+  }
+};
+
+const saveCart = () => {
+  if (!USE_LOCAL_STORAGE) return;
+  localStorage.setItem(CART_KEY, JSON.stringify(CART));
+};
+
+const cartCount = () => CART.reduce((sum, item) => sum + item.qty, 0);
+
+const cartTotal = () =>
+  CART.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+const renderCart = () => {
+  
+  const countEl = document.getElementById("cartCount");
+  const countTextEl = document.getElementById("cartCountText");
+  const totalEl = document.getElementById("cartTotal");
+  const itemsEl = document.getElementById("cartItems");
+
+  if (countEl) countEl.textContent = cartCount();
+  if (countTextEl) countTextEl.textContent = cartCount();
+  if (totalEl) totalEl.textContent = money(cartTotal());
+
+  if (!itemsEl) return;
+
+  if (CART.length === 0) {
+    itemsEl.innerHTML = `<p class="text-sm opacity-70">Your cart is empty.</p>`;
+    return;
+  }
+
+  itemsEl.innerHTML = CART.map((item) => {
+    return `
+      <div class="flex gap-3 items-center border rounded-xl p-2">
+        <img src="${item.image}" alt="" class="w-12 h-12 object-contain rounded bg-base-200" />
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-semibold truncate">${item.title}</p>
+          <p class="text-xs opacity-70">$${money(item.price)} × ${item.qty}</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button class="btn btn-ghost btn-xs" data-dec="${item.id}">−</button>
+          <button class="btn btn-ghost btn-xs" data-inc="${item.id}">+</button>
+          <button class="btn btn-error btn-xs" data-rem="${item.id}">Remove</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+ 
+  itemsEl.querySelectorAll("[data-inc]").forEach((btn) => {
+    btn.addEventListener("click", () => increaseQty(btn.dataset.inc));
+  });
+
+  itemsEl.querySelectorAll("[data-dec]").forEach((btn) => {
+    btn.addEventListener("click", () => decreaseQty(btn.dataset.dec));
+  });
+
+  itemsEl.querySelectorAll("[data-rem]").forEach((btn) => {
+    btn.addEventListener("click", () => removeFromCart(btn.dataset.rem));
+  });
+};
+
+
+window.addToCart = (productId) => {
+  const product = ALL_PRODUCTS.find((p) => p.id === productId);
+  if (!product) return;
+
+  const existing = CART.find((i) => i.id === product.id);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    CART.push({
+      id: String(product.id),
+      title: product.title,
+      price: Number(product.price),
+      image: product.image,
+      qty: 1,
+    });
+  }
+
+  saveCart();
+  renderCart();
+};
+
+const removeFromCart = (id) => {
+  CART = CART.filter((i) => String(i.id) !== String(id));
+  saveCart();
+  renderCart();
+};
+
+const increaseQty = (id) => {
+  const item = CART.find((i) => String(i.id) === String(id));
+  if (!item) return;
+  item.qty += 1;
+  saveCart();
+  renderCart();
+};
+
+const decreaseQty = (id) => {
+  const item = CART.find((i) => String(i.id) === String(id));
+  if (!item) return;
+  item.qty -= 1;
+  if (item.qty <= 0) CART = CART.filter((i) => String(i.id) !== String(id));
+  saveCart();
+  renderCart();
+};
+
+const clearCart = () => {
+  CART = [];
+  saveCart();
+  renderCart();
+};
+
+
 const loadAllProducts = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const products = await res.json();
@@ -9,6 +140,9 @@ const loadAllProducts = async () => {
 
   renderCategoryBar(products);
   displayProducts(products);
+
+  
+  renderCart();
 };
 
 const normalizeCategoryLabel = (cat) => {
@@ -21,7 +155,7 @@ const normalizeCategoryLabel = (cat) => {
   return map[cat] || cat;
 };
 
-/*Category Bar Render*/
+/* category bar render */
 const renderCategoryBar = (products) => {
   const bar = document.getElementById("categoryBar");
 
@@ -48,7 +182,6 @@ const renderCategoryBar = (products) => {
     })
     .join("");
 
-  
   bar.querySelectorAll("button[data-cat]").forEach((btn) => {
     btn.addEventListener("click", () => {
       filterByCategory(btn.dataset.cat);
@@ -56,7 +189,7 @@ const renderCategoryBar = (products) => {
   });
 };
 
-/* Filter Products */
+/* filter products */
 const filterByCategory = (cat) => {
   ACTIVE_CATEGORY = cat;
 
@@ -70,7 +203,7 @@ const filterByCategory = (cat) => {
   displayProducts(filtered);
 };
 
-/* Display Products */
+/* display products */
 const displayProducts = (products) => {
   const grid = document.getElementById("productsGrid");
   grid.innerHTML = "";
@@ -117,7 +250,6 @@ const displayProducts = (products) => {
           <!-- Details Button -->
           <button onclick="openModal(${product.id})"
             class="btn btn-none w-full border rounded-xl normal-case font-semibold">
-
             <svg xmlns="http://www.w3.org/2000/svg"
               width="16" height="16"
               viewBox="0 0 24 24"
@@ -129,20 +261,19 @@ const displayProducts = (products) => {
               <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
               <circle cx="12" cy="12" r="2.5"></circle>
             </svg>
-
             Details
           </button>
 
-          <!-- Add Button -->
+          <!-- Add Button (HOOKED) -->
           <button
-            class="btn btn-primary w-full rounded-xl normal-case font-semibold">
-
+            class="btn btn-primary w-full rounded-xl normal-case font-semibold"
+            onclick="addToCart(${product.id})"
+          >
             <svg xmlns="http://www.w3.org/2000/svg"
               class="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
-
               <path stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -152,7 +283,6 @@ const displayProducts = (products) => {
                 m0 0a2 2 0 100 4 2 2 0 000-4
                 zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-
             Add
           </button>
         </div>
@@ -193,6 +323,7 @@ const closeModal = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+ 
   modalEl = document.getElementById("productModal");
   closeBtn = document.getElementById("closeModal");
 
@@ -210,6 +341,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
+
+  
+  loadCart();
+  renderCart();
+
+  const clearBtn = document.getElementById("clearCartBtn");
+  if (clearBtn) clearBtn.addEventListener("click", clearCart);
 });
 
 loadAllProducts();
