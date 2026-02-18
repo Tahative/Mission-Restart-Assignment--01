@@ -244,7 +244,7 @@
           <!-- Brand -->
           <aside class="max-w-sm">
             <a class="text-xl font-semibold tracking-tight text-indigo-400" href="#">
-              SwiftCart
+              SwiftCraft
             </a>
             <p class="mt-3 text-sm leading-6 text-slate-400">
               Your one-stop shop for all your fashion and lifestyle needs. Quality products,
@@ -289,7 +289,7 @@
               />
               <button
                 type="submit"
-                class="btn btn-primary bg-indigo-500 border-indigo-500 hover:bg-indigo-400 hover:border-indigo-400"
+                class="btn btn-primary bg-indigo-500 border-indigo-500 hover:bg-indigo-400 hover:border-indigo-400 mx-2"
               >
                 Subscribe
               </button>
@@ -399,18 +399,15 @@
 
 
      <!-- global lader -->
-  <div id="globalLoader"
-      class="fixed inset-0 z-[9999] hidden">
+ 
+    <div id="globalLoader" class="fixed left-0 top-0 w-screen h-screen z-[999999] hidden">
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
 
-    <!-- oerlay -->
-    <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-
-    <!-- cntered sinner -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <span class="loading loading-infinity loading-xl text-primary"></span>
+      <!-- Grid is the most reliable perfect-centering on mobile -->
+      <div class="absolute inset-0 grid place-items-center">
+        <span class="loading loading-infinity loading-xl text-primary"></span>
+      </div>
     </div>
-
-  </div>
 
   <!-- js -->
   <script src="./index.js"></script>

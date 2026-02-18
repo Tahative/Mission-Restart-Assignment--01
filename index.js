@@ -11,6 +11,13 @@ function hideLoader() {
   if (loader) loader.classList.add("hidden");
 }
 
+function showLoader() {
+  const loader = document.getElementById("globalLoader");
+  if (!loader) return;
+  loader.classList.remove("hidden");
+}
+
+
 
 
 /* =========================
